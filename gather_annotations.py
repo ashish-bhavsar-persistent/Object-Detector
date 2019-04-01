@@ -2,7 +2,7 @@ import numpy as np
 import cv2
 import argparse
 from imutils.paths import list_images
-from selectors import *
+from selectors import BoxSelector
 
 #parse arguments
 ap = argparse.ArgumentParser()
@@ -29,7 +29,7 @@ for imagePath in list_images(args["dataset"]):
     (x,y,xb,yb) = [pt1[0],pt1[1],pt2[0],pt2[1]]
     annotations.append([int(x),int(y),int(xb),int(yb)])
     imPaths.append(imagePath)
-
+    print(imagePath)
 #save annotations and image paths to disk
 annotations = np.array(annotations)
 imPaths = np.array(imPaths,dtype="unicode")

@@ -15,4 +15,4 @@ imagePaths = np.load(args["images"])
 detector = ObjectDetector()
 print ("[INFO] creating & saving object detector")
 
-detector.fit(imagePaths,annots,visualize=False,savePath=args["detector"])
+detector.fit(imagePaths,annots,visualize=True,savePath=args["detector"])

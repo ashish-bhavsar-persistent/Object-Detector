@@ -2,4 +2,4 @@
 venv/
 *.jpg
 *.xml
-
+.DS_Store

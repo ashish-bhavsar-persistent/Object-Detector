@@ -1,6 +1,19 @@
 #Object-Detector
 This project is created to support the blog [post](http://hackevolve.com/create-your-own-object-detector/). It uses HOG+SVM framework for performing Object Detection.
 
+
+--detector clock_detector.svm --image clock_test/1.jpg --annotate gun
+  
+
+
+
+/Users/shree/Ashu/Python/Gun_Detection/venv/bin/python /Users/shree/Ashu/Python/Gun_Detection/Object-Detector/annotations.py  --dataset cropped/ --annotations annot.npy --images images.npy
+
+/Users/shree/Ashu/Python/Gun_Detection/venv/bin/python /Users/shree/Ashu/Python/Gun_Detection/Object-Detector/train.py  --annotations annot.npy --images images.npy --detector clock_detector.svm  
+
+
+
+/Users/shree/Ashu/Python/Gun_Detection/venv/bin/python /Users/shree/Ashu/Python/Gun_Detection/Object-Detector/cropImage.py
 ###Usage:
 
 ####Gather annotations from images...

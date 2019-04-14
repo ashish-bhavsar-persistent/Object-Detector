@@ -2,6 +2,7 @@ from detector import ObjectDetector
 import numpy as np
 import cv2
 import argparse
+import os
 
 ap = argparse.ArgumentParser()
 ap.add_argument("-d","--detector",required=True,help="path to trained detector to load...")
@@ -11,6 +12,11 @@ args = vars(ap.parse_args())
 
 detector = ObjectDetector(loadPath=args["detector"])
 
-imagePath = args["image"]
-image = cv2.imread(imagePath)
-detector.detect(image,annotate=args["annotate"])
+# imagePath = args["image"]
+
+for file_type in ['Images_old']:
+    for img1 in os.listdir(file_type):
+        current_image_path = str(file_type) + "/" + str(img1)
+        image = cv2.imread(current_image_path)
+        print(current_image_path)
+        detector.detect(image,annotate=args["annotate"])
